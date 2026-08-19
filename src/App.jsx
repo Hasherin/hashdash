@@ -6,6 +6,10 @@ import "./App.css";
 import FaultyTerminal from "./FaultyTerminal";
 import ScrambledText from "./ScrambledText";
 import SpotlightCard from "./SpotlightCard.jsx";
+import { BrowserRouter, Routes, Route } from "react-router";
+import Login from "./Auth/Login";
+import Register from "./Auth/Register";
+import Home from "./Home";
 
 function App() {
   const [tintColor, setTintColor] = useState("#A7EF9E"); // Fallback color
@@ -21,7 +25,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <BrowserRouter>
       <div
         style={{
           width: "100%",
@@ -72,7 +76,7 @@ function App() {
             className="custom-spotlight-card"
             spotlightColor="var(--accent-red)"
           >
-            <a href="#">
+            <a href="/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="2rem"
@@ -93,10 +97,39 @@ function App() {
             >
               Hashdash
             </ScrambledText>
+            <a href="/login">
+              <ScrambledText
+                className="scrambled-text-demo"
+                radius={10}
+                duration={2}
+                speed={0.1}
+                scrambleChars="_$X"
+                style={{ paddingLeft: "1.5rem" }}
+              >
+                Login
+              </ScrambledText>
+            </a>
+            <a href="/register">
+              <ScrambledText
+                className="scrambled-text-demo"
+                radius={10}
+                duration={2}
+                speed={0.1}
+                scrambleChars="_$X"
+                style={{ paddingLeft: "1.5rem" }}
+              >
+                Register
+              </ScrambledText>
+            </a>
           </SpotlightCard>
+          <Routes>
+            <Route index element={<Home />}/>
+            <Route path="login" element={<Login />}/>
+            <Route path="register" element={<Register/>}/>
+          </Routes>
         </div>
       </div>
-    </>
+    </BrowserRouter>
   );
 }
 
