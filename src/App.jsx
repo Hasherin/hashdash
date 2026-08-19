@@ -5,7 +5,7 @@ import heroImg from "./assets/hero.png";
 import "./App.css";
 import FaultyTerminal from "./FaultyTerminal";
 import ScrambledText from "./ScrambledText";
-import BorderGlow from "./BorderGlow";
+import SpotlightCard from "./SpotlightCard.jsx";
 
 function App() {
   const [tintColor, setTintColor] = useState("#A7EF9E"); // Fallback color
@@ -68,17 +68,9 @@ function App() {
         }}
       >
         <div className="div-main">
-          <BorderGlow
-            edgeSensitivity={30}
-            glowColor="40 80 80"
-            backgroundColor="#120F17"
-            borderRadius={28}
-            glowRadius={40}
-            glowIntensity={1}
-            coneSpread={25}
-            animated={true}
-            colors={["#c084fc", "#f472b6", "#38bdf8"]}
-            style={{ className: "div-menu" }}
+          <SpotlightCard
+            className="custom-spotlight-card"
+            spotlightColor="var(--accent-red)"
           >
             <a href="#">
               <svg
@@ -101,7 +93,7 @@ function App() {
             >
               Hashdash
             </ScrambledText>
-          </BorderGlow>
+          </SpotlightCard>
         </div>
       </div>
     </>
