@@ -6,7 +6,7 @@ import "./App.css";
 import FaultyTerminal from "./FaultyTerminal";
 import ScrambledText from "./ScrambledText";
 import SpotlightCard from "./SpotlightCard.jsx";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route, Link } from "react-router";
 import Login from "./Auth/Login";
 import Register from "./Auth/Register";
 import Home from "./Home";
@@ -76,17 +76,19 @@ function App() {
             className="custom-spotlight-card"
             spotlightColor="var(--accent-red)"
           >
-            <button a href="/">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="2rem"
-                viewBox="0 -960 960 960"
-                width="2rem"
-                fill="var(--text-color)"
-              >
-                <path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z" />
-              </svg>
-            </button>
+            <Link to="/">
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="2rem"
+                  viewBox="0 -960 960 960"
+                  width="2rem"
+                  fill="var(--text-color)"
+                >
+                  <path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z" />
+                </svg>
+              </button>
+            </Link>
             <ScrambledText
               className="scrambled-text-demo"
               radius={10}
@@ -97,20 +99,24 @@ function App() {
             >
               Hashdash
             </ScrambledText>
-            <button a href="/login" className="button-rectengular">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#e3e3e3"
-              >
-                <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z" />
-              </svg>
-            </button>
-            <button a href="/register">
-              REGISTER PH
-            </button>
+            <Link to="/login">
+              <button className="button-rectengular">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#e3e3e3"
+                >
+                  <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z" />
+                </svg>
+              </button>
+            </Link>
+            <Link to="/register">
+              <button>
+                REGISTER PH
+              </button>
+            </Link>
           </SpotlightCard>
           <Routes>
             <Route index element={<Home />} />
