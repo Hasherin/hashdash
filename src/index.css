@@ -48,8 +48,8 @@ html {
   box-shadow: 0rem 0rem 1rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
-a {
-  background-color: var(--modules-color) !important;
+button {
+  background-color: var(--modules-color-opacity);
   height: fit-content;
   width: fit-content;
   padding: 0.5rem;
@@ -59,8 +59,15 @@ a {
   border-radius: 2.5rem;
   box-shadow: 0rem 0rem 1rem 0.1rem rgba(0, 0, 0, 0.5);
   transition: all 0.25s ease-in-out;
+  cursor: default;
 }
 
-a:hover {
+button:hover {
   background-color: var(--modules-color);
+  transform: scale(110%);
+  cursor: pointer;
+}
+
+.button-rectengular > * {
+  border-radius: 0rem !important;
 }

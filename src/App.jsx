@@ -76,7 +76,7 @@ function App() {
             className="custom-spotlight-card"
             spotlightColor="var(--accent-red)"
           >
-            <a href="/">
+            <button a href="/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="2rem"
@@ -86,46 +86,36 @@ function App() {
               >
                 <path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z" />
               </svg>
-            </a>
+            </button>
             <ScrambledText
               className="scrambled-text-demo"
               radius={10}
               duration={2}
               speed={0.1}
               scrambleChars="_$X"
-              style={{ paddingLeft: "1.5rem" }}
+              style={{ paddingLeft: "0.5rem" }}
             >
               Hashdash
             </ScrambledText>
-            <a href="/login">
-              <ScrambledText
-                className="scrambled-text-demo"
-                radius={10}
-                duration={2}
-                speed={0.1}
-                scrambleChars="_$X"
-                style={{ paddingLeft: "1.5rem" }}
+            <button a href="/login" className="button-rectengular">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e3e3e3"
               >
-                Login
-              </ScrambledText>
-            </a>
-            <a href="/register">
-              <ScrambledText
-                className="scrambled-text-demo"
-                radius={10}
-                duration={2}
-                speed={0.1}
-                scrambleChars="_$X"
-                style={{ paddingLeft: "1.5rem" }}
-              >
-                Register
-              </ScrambledText>
-            </a>
+                <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z" />
+              </svg>
+            </button>
+            <button a href="/register">
+              REGISTER PH
+            </button>
           </SpotlightCard>
           <Routes>
-            <Route index element={<Home />}/>
-            <Route path="login" element={<Login />}/>
-            <Route path="register" element={<Register/>}/>
+            <Route index element={<Home />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
           </Routes>
         </div>
       </div>
