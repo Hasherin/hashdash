@@ -22,7 +22,7 @@ const formatClock = (date) => ({
   dateTime: date.toISOString(),
 });
 
-function Clock(){
+function Clock() {
   const [clock, setClock] = useState(() => formatClock(new Date()));
 
   useEffect(() => {
@@ -34,7 +34,11 @@ function Clock(){
     return () => clearInterval(intervalId);
   }, []);
 
-  return <time dateTime={clock.dateTime}>{clock.display} - BUDAPEST</time>;
+  return (
+    <time className="clock" dateTime={clock.dateTime}>
+      | {clock.display} - Server Time |
+    </time>
+  );
 }
 
 function App() {
@@ -126,45 +130,54 @@ function App() {
               Hashdash
             </ScrambledText>
             <Clock />
-            <Link to="Bookstack PH">
-              <button className="button-rec" title="Guides">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="2rem"
-                  viewBox="0 -960 960 960"
-                  width="2rem"
-                  fill="var(--text-color)"
-                >
-                  <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-640v560h560v-560h-80v280l-100-60-100 60v-280H200Zm0 560v-560 560Z" />
-                </svg>
-              </button>
-            </Link>
-            <Link to="/login">
-              <button className="button-rec" title="Login">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="2rem"
-                  viewBox="0 -960 960 960"
-                  width="2rem"
-                  fill="var(--text-color)"
-                >
-                  <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z" />
-                </svg>
-              </button>
-            </Link>
-            <Link to="/register">
-              <button className="button-rec" title="Register">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="2rem"
-                  viewBox="0 -960 960 960"
-                  width="2rem"
-                  fill="var(--text-color)"
-                >
-                  <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
-                </svg>
-              </button>
-            </Link>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                marginLeft: "auto",
+                paddingRight: "1rem",
+              }}
+            >
+              <Link to="Bookstack PH">
+                <button className="button-rec" title="Guides">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="2rem"
+                    viewBox="0 -960 960 960"
+                    width="2rem"
+                    fill="var(--text-color)"
+                  >
+                    <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-640v560h560v-560h-80v280l-100-60-100 60v-280H200Zm0 560v-560 560Z" />
+                  </svg>
+                </button>
+              </Link>
+              <Link to="/login">
+                <button className="button-rec" title="Login">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="2rem"
+                    viewBox="0 -960 960 960"
+                    width="2rem"
+                    fill="var(--text-color)"
+                  >
+                    <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z" />
+                  </svg>
+                </button>
+              </Link>
+              <Link to="/register">
+                <button className="button-rec" title="Register">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="2rem"
+                    viewBox="0 -960 960 960"
+                    width="2rem"
+                    fill="var(--text-color)"
+                  >
+                    <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                  </svg>
+                </button>
+              </Link>
+            </div>
           </SpotlightCard>
           <Routes>
             <Route index element={<Home />} />
