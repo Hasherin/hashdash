@@ -22,9 +22,23 @@ const formatClock = (date) => ({
   dateTime: date.toISOString(),
 });
 
+function Clock(){
+  const [clock, setClock] = useState(() => formatClock(new Date()));
+
+  useEffect(() => {
+    const updateClock = () => setClock(formatClock(new Date()));
+
+    updateClock();
+    const intervalId = setInterval(updateClock, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  return <time dateTime={clock.dateTime}>{clock.display} - BUDAPEST</time>;
+}
+
 function App() {
   const [tintColor, setTintColor] = useState("#A7EF9E"); // Fallback color
-  const [clock, setClock] = useState(() => formatClock(new Date()));
 
   useEffect(() => {
     const globalTint = getComputedStyle(document.documentElement)
@@ -34,15 +48,6 @@ function App() {
     if (globalTint) {
       setTintColor(globalTint);
     }
-  }, []);
-
-  useEffect(() => {
-    const updateClock = () => setClock(formatClock(new Date()));
-
-    updateClock();
-    const intervalId = setInterval(updateClock, 1000);
-
-    return () => clearInterval(intervalId);
   }, []);
 
   return (
@@ -120,7 +125,7 @@ function App() {
             >
               Hashdash
             </ScrambledText>
-            <time dateTime={clock.dateTime}>{clock.display} - BUDAPEST</time>
+            <Clock />
             <Link to="Bookstack PH">
               <button className="button-rec" title="Guides">
                 <svg
