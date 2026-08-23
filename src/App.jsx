@@ -11,8 +11,20 @@ import Login from "./Auth/Login";
 import Register from "./Auth/Register";
 import Home from "./Home";
 
+const formatClock = (date) => ({
+  display: new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Budapest",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23",
+  }).format(date),
+  dateTime: date.toISOString(),
+});
+
 function App() {
   const [tintColor, setTintColor] = useState("#A7EF9E"); // Fallback color
+  const [clock, setClock] = useState(() => formatClock(new Date()));
 
   useEffect(() => {
     const globalTint = getComputedStyle(document.documentElement)
@@ -22,6 +34,15 @@ function App() {
     if (globalTint) {
       setTintColor(globalTint);
     }
+  }, []);
+
+  useEffect(() => {
+    const updateClock = () => setClock(formatClock(new Date()));
+
+    updateClock();
+    const intervalId = setInterval(updateClock, 1000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
@@ -77,7 +98,7 @@ function App() {
             spotlightColor="var(--accent-red)"
           >
             <Link to="/">
-              <button>
+              <button title="Home">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="2rem"
@@ -99,22 +120,44 @@ function App() {
             >
               Hashdash
             </ScrambledText>
-            <Link to="/login">
-              <button className="button-rectengular">
+            <time dateTime={clock.dateTime}>{clock.display} - BUDAPEST</time>
+            <Link to="Bookstack PH">
+              <button className="button-rec" title="Guides">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
+                  height="2rem"
                   viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e3e3e3"
+                  width="2rem"
+                  fill="var(--text-color)"
+                >
+                  <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-640v560h560v-560h-80v280l-100-60-100 60v-280H200Zm0 560v-560 560Z" />
+                </svg>
+              </button>
+            </Link>
+            <Link to="/login">
+              <button className="button-rec" title="Login">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="2rem"
+                  viewBox="0 -960 960 960"
+                  width="2rem"
+                  fill="var(--text-color)"
                 >
                   <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z" />
                 </svg>
               </button>
             </Link>
             <Link to="/register">
-              <button>
-                REGISTER PH
+              <button className="button-rec" title="Register">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="2rem"
+                  viewBox="0 -960 960 960"
+                  width="2rem"
+                  fill="var(--text-color)"
+                >
+                  <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                </svg>
               </button>
             </Link>
           </SpotlightCard>

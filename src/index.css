@@ -46,9 +46,12 @@ html {
   cursor: default;
   box-sizing: border-box;
   box-shadow: 0rem 0rem 1rem 0.5rem rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0rem 0rem 1rem 0.5rem var(--accent-red);
 }
 
 button {
+  border: none;
+  outline: none;
   background-color: var(--modules-color-opacity);
   height: fit-content;
   width: fit-content;
@@ -68,6 +71,6 @@ button:hover {
   cursor: pointer;
 }
 
-.button-rectengular > * {
-  border-radius: 0rem !important;
+.button-rec {
+  border-radius: 0.5rem;
 }
