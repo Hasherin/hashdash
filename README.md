@@ -1,1 +1,1 @@
-![Alt text](./assets/banner.png)
+![Alt text](./src/assets/banner.png)
