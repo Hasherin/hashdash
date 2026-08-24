@@ -41,6 +41,8 @@ function Clock() {
   );
 }
 
+const GRID_MUL = [2, 1];
+
 function App() {
   const [tintColor, setTintColor] = useState("#A7EF9E"); // Fallback color
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,7 +70,7 @@ function App() {
         {
           <FaultyTerminal
             scale={1.5}
-            gridMul={[2, 1]}
+            gridMul={GRID_MUL}
             digitSize={1.2}
             timeScale={0.5}
             pause={false}
