@@ -13,19 +13,94 @@ html {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 18px;
+  font-size: clamp(12px, 4dvw, 16px);
 }
 
 .div-main {
   background-color: var(--background-color-opacity);
   border-radius: 1rem;
   height: 90%;
+  max-width: 100%;
   width: 50%;
   padding: 0.5rem;
   box-sizing: border-box;
   box-shadow: 0rem 0rem 2.5rem 0.5rem rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   align-items: start;
+}
+
+.right-side-links {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+@media screen and (max-width: 440px) {
+  html {
+    font-size: 12px;
+  }
+
+  .div-main {
+    height: 100%;
+    width: 100%;
+  }
+
+  button {
+    flex-direction: column;
+  }
+
+  .right-side-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 0;
+    position: relative;
+    z-index: 3;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .right-side-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 0.25rem;
+    padding-right: 1rem;
+    border-radius: 0.5rem;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-0.5rem);
+    transition:
+      opacity 0.2s ease-in-out,
+      transform 0.2s ease-in-out,
+      visibility 0s linear 0.2s;
+  }
+
+  .right-side-links.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition:
+      opacity 0.2s ease-in-out,
+      transform 0.2s ease-in-out,
+      visibility 0s linear 0s;
+  }
+
+  .clock {
+    padding-left: 0.5rem;
+    padding-bottom: 1rem;
+  }
 }
 
 .div-menu,
@@ -47,6 +122,13 @@ html {
   box-sizing: border-box;
   box-shadow: 0rem 0rem 1rem 0.5rem rgba(0, 0, 0, 0.5);
   box-shadow: inset 0rem 0rem 1rem 0.5rem var(--accent-red);
+}
+
+.right-side-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  padding-right: 1rem;
 }
 
 button {
