@@ -113,9 +113,9 @@ function App() {
               <button title="Home">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  height="2rem"
+                  height="fill-content"
                   viewBox="0 -960 960 960"
-                  width="2rem"
+                  width="fill-content"
                   fill="var(--text-color)"
                 >
                   <path d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Zm80-400h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z" />
@@ -144,9 +144,9 @@ function App() {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  height="2rem"
+                  height="fill-content"
                   viewBox="0 -960 960 960"
-                  width="2rem"
+                  width="fill-content"
                   fill="var(--text-color)"
                 >
                   <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
@@ -159,9 +159,9 @@ function App() {
                   <button className="button-rec" title="Guides">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      height="2rem"
+                      height="fill-content"
                       viewBox="0 -960 960 960"
-                      width="2rem"
+                      width="fill-content"
                       fill="var(--text-color)"
                     >
                       <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-640v560h560v-560h-80v280l-100-60-100 60v-280H200Zm0 560v-560 560Z" />
@@ -172,9 +172,9 @@ function App() {
                   <button className="button-rec" title="Login">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      height="2rem"
+                      height="fill-content"
                       viewBox="0 -960 960 960"
-                      width="2rem"
+                      width="fill-content"
                       fill="var(--text-color)"
                     >
                       <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z" />
@@ -185,9 +185,9 @@ function App() {
                   <button className="button-rec" title="Register">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      height="2rem"
+                      height="fill-content"
                       viewBox="0 -960 960 960"
-                      width="2rem"
+                      width="fill-content"
                       fill="var(--text-color)"
                     >
                       <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />

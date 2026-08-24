@@ -13,5 +13,5 @@
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New",
     monospace;
   letter-spacing: 0.25em;
-  font-size: clamp(16px, 4dvw, 32px);
+  font-size: clamp(16px, 4dvw, 28px);
 }
